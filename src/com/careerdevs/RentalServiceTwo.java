@@ -26,9 +26,27 @@ public class RentalServiceTwo {
         }
 
         System.out.println("Enter a number to select the car you'd like to rent\n Selection:");
-        int number = scan.nextInt();
-        if (number)
+
+
+        switch (scan.nextInt()) {
+            case 1:
+                System.out.println("Thank you! You are now renting the " + car1);
+                break;
+            case 2:
+                System.out.println("Thank you! You are now renting the " + car2);
+                break;
+            case 3:
+                System.out.println("Thank you! You are now renting the " + car3);
+                break;
+            default:
+                System.err.println("Car selection invalid, please try again");
+                break;
+
+
+        }
 
     }
+
+
 }
 
