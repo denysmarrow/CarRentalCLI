@@ -30,13 +30,13 @@ public class RentalServiceTwo {
 
         switch (scan.nextInt()) {
             case 1:
-                System.out.println("Thank you! You are now renting the " + car1);
+                System.out.println("Thank you! You are now renting the " + availableCars.get(0).getName());
                 break;
             case 2:
-                System.out.println("Thank you! You are now renting the " + car2);
+                System.out.println("Thank you! You are now renting the " + availableCars.get(1).getName());
                 break;
             case 3:
-                System.out.println("Thank you! You are now renting the " + car3);
+                System.out.println("Thank you! You are now renting the " + availableCars.get(2).getName());
                 break;
             default:
                 System.err.println("Car selection invalid, please try again");
