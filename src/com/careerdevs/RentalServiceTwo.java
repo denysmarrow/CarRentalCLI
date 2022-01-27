@@ -26,9 +26,10 @@ public class RentalServiceTwo {
         }
 
         System.out.println("Enter a number to select the car you'd like to rent\n Selection:");
+        int userSelection = scan.nextInt();
 
 
-        switch (scan.nextInt()) {
+        switch (userSelection) {
             case 1:
                 System.out.println("Thank you! You are now renting the " + availableCars.get(0).getName());
                 break;
