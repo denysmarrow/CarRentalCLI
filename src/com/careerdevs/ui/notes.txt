@@ -1,0 +1,8 @@
+try {
+    int num = s.next.Int();
+    System.out.println("Your num is " + num);
+    } catch (Exception e) {
+        System.out.println("Bad data given")
+
+    }
+}

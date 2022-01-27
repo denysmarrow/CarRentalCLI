@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RentalServiceTwo {
-    Scanner scan = new Scanner(System.in);
+    private static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         Car car1 = new Car("Honda", "Accord");
@@ -16,7 +16,7 @@ public class RentalServiceTwo {
 
         availableCars.add(car1);
         availableCars.add(car3);
-        rentedCars.add(car2);
+        availableCars.add(car2);
 
 
         System.out.println("Available Cars");
@@ -25,6 +25,9 @@ public class RentalServiceTwo {
             System.out.println("(" + (i + 1) + ")" + availableCars.get(i).getName());
         }
 
+        System.out.println("Enter a number to select the car you'd like to rent\n Selection:");
+        int number = scan.nextInt();
+        if (number)
 
     }
 }
