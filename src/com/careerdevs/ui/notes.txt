@@ -6,3 +6,27 @@ try {
 
     }
 }
+
+
+
+
+
+// 1-27 WALKTHROUGH NOTES "how do we create a menu system"
+
+
+public class Main {
+
+        public static void main(String[] args) {
+
+        System.out.println("Select and option");
+        System.out.println("1) Menu 1");
+        System.out.println("2) Menu 2");
+        System.out.println("3) Exit");
+
+
+        }
+}
+
+
+
+
