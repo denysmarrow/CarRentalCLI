@@ -1,16 +1,16 @@
 package com.careerdevs;
 
 public class Car {
-
     private String make;
     private String model;
     private boolean isRented;
+    private String getName;
 
-    public Car ( String make, String model) {
 
+    public Car(String make, String model, boolean isRented) {
         this.make = make;
         this.model = model;
-        this.isRented = false;
+        this.isRented = isRented;
     }
 
     public String getMake() {
@@ -32,13 +32,4 @@ public class Car {
     public void setRented(boolean rented) {
         isRented = rented;
     }
-
-    //    @Override
-//    public String toString() {
-//        return "Car{" +
-//                "make='" + make + '\'' +
-//                ", model='" + model + '\'' +
-//                ", isRented=" + isRented +
-//                '}';
-//    }
 }
