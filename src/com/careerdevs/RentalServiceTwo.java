@@ -29,17 +29,34 @@ public class RentalServiceTwo {
         System.out.println("2) Return ");
         System.out.println("3) Exit ");
 
+        int x = 0;
+        for (int i = 0; i < carStorage.size(); i++) {
+            if(!carStorage.get(i).isRented()){
+                x++;
+            }
+        }
 
         int userSelection = UI.readInt("Enter a number:  ", 1, 3);
 
-        if(userSelection == 1) {
+        if(userSelection == 1 && x == 0) {
+            System.out.println("There are no cars available");
+            mainMenu();
+
+        } else if (userSelection == 2 && carStorage.size() - x == 0) {
+            System.out.println("You haven't rented any cars. Please try again ");
+            mainMenu();
+
+        } else if ( userSelection == 1) {
             rentalMenu();
 
         } else if (userSelection == 2) {
             option2();
 
+        } else if (userSelection == 3) {
+            System.out.println("Thank you for using Java Car Rentals! Have nice day!");
 
         }
+
 
     }
 
