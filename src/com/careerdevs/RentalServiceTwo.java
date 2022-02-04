@@ -9,19 +9,37 @@ public class RentalServiceTwo {
 
     private static ArrayList<Car> carStorage;
 
-    public static void main(String[] args) {
-//        int testInt = UI.readInt("Enter a num",1, 10);
-//        System.out.println(testInt);
-        initializeCarStorage();
-//        carStorage.get(0).isRented(); //FOR TESTING
-        rentalMenu();
-        while(true){
 
-            rentalMenu();
+    public static void main(String[] args) {
+
+        initializeCarStorage();
+
+        System.out.println("Welcome to Java Car Rentals!");
+        mainMenu();
         }
 
 
 
+
+
+
+    private static void mainMenu () {
+        System.out.println("Would you like to...");
+        System.out.println("1) Rental ");
+        System.out.println("2) Return ");
+        System.out.println("3) Exit ");
+
+
+        int userSelection = UI.readInt("Enter a number:  ", 1, 3);
+
+        if(userSelection == 1) {
+            rentalMenu();
+
+        } else if (userSelection == 2) {
+            option2();
+
+
+        }
 
     }
 
@@ -37,7 +55,7 @@ public class RentalServiceTwo {
             }
         }
         //display available cars
-        System.out.println(availableCars);
+
         for (int i = 0; i < availableCars.size(); i++) {
             System.out.println(i+1 +") " + availableCars.get(i).getName());
         }
@@ -45,12 +63,50 @@ public class RentalServiceTwo {
         // read user input
         int userSelection = UI.readInt("Enter a number to select the car you'd like to rent", 1, availableCars.size());
 
-        System.out.println(availableCars.get(userSelection-1).getName());
+        System.out.println("Thank you, you are now renting the " + availableCars.get(userSelection-1).getName());
 
         availableCars.get(userSelection-1).setRented(true);
 
+        System.out.println("Bringing you back to the main menu… ");
+
+        mainMenu();
+
 
     }
+
+    private static void option2 () {
+
+        System.out.println("\nRented Cars\n");
+
+
+        ArrayList<Car> availableCars = new ArrayList<>();
+        for (int i = 0; i < carStorage.size(); i++) {
+            if (carStorage.get(i).isRented()) {
+                availableCars.add(carStorage.get(i));
+            }
+        }
+        //display available cars
+//        System.out.println(availableCars);
+        for (int i = 0; i < availableCars.size(); i++) {
+            System.out.println(i+1 +") " + availableCars.get(i).getName());
+        }
+
+        // read user input
+        int userSelection = UI.readInt("Enter a number to select the car you'd like to return", 1, availableCars.size());
+
+        System.out.println("Thank you, you have returned the " + availableCars.get(userSelection-1).getName());
+
+        availableCars.get(userSelection-1).setRented(false);
+
+        System.out.println("Bringing you back to the main menu… ");
+
+        mainMenu();
+
+        //adding a counter that checks everytime it prints out
+
+
+    }
+
 
     private static void initializeCarStorage () {
         carStorage = new ArrayList<>();
@@ -66,6 +122,8 @@ public class RentalServiceTwo {
         carStorage.addAll(List.of(car1, car2,car3, car4, car5));
 
     }
+
+
 
 }
 
