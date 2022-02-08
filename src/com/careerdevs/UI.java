@@ -16,6 +16,9 @@ public class UI {
             int userInput = scanner.nextInt();
             if (userInput >= min && userInput <= max) {
                 return userInput;
+            } else if ( userInput == 0) {
+                return readInt(question, min, max);
+
             }
             System.out.println("Number outside of the valid range, try again");
             return readInt(question, min, max);
@@ -31,6 +34,19 @@ public class UI {
             scanner.nextLine();
             return readInt(question, min, max);
         }
+
+    }
+
+    public static int returnToMain (String question, int zero) {
+        System.out.println(question);
+        System.out.println("Enter: " + zero);
+        int userInput2 = scanner.nextInt();
+        if (userInput2 == 0) {
+            return returnToMain(question, zero);
+        }
+        return returnToMain(question, zero);
+
     }
 
 }
+

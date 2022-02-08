@@ -79,14 +79,21 @@ public class RentalServiceTwo {
 
         // read user input
         int userSelection = UI.readInt("Enter a number to select the car you'd like to rent", 1, availableCars.size());
+            if (userSelection == 0) {
+            mainMenu();
+        } else {
 
-        System.out.println("Thank you, you are now renting the " + availableCars.get(userSelection-1).getName());
+                System.out.println("Thank you, you are now renting the " + availableCars.get(userSelection - 1).getName());
 
-        availableCars.get(userSelection-1).setRented(true);
+                availableCars.get(userSelection - 1).setRented(true);
 
-        System.out.println("Bringing you back to the main menu… ");
 
-        mainMenu();
+                System.out.println("Bringing you back to the main menu… ");
+
+                mainMenu();
+            }
+
+
 
 
     }
