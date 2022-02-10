@@ -62,6 +62,7 @@ public class RentalServiceTwo {
 
 
     private static void rentalMenu () {
+        System.out.println("Press 0 to Return To Main Menu");
         System.out.println("\nAvailable Cars\n");
 
 
@@ -78,7 +79,7 @@ public class RentalServiceTwo {
         }
 
         // read user input
-        int userSelection = UI.readInt("Enter a number to select the car you'd like to rent", 1, availableCars.size());
+        int userSelection = UI.readInt("Enter a number to select the car you'd like to rent", 0, availableCars.size());
             if (userSelection == 0) {
             mainMenu();
         } else {
@@ -91,15 +92,15 @@ public class RentalServiceTwo {
                 System.out.println("Bringing you back to the main menu… ");
 
                 mainMenu();
+
+
             }
-
-
 
 
     }
 
     private static void option2 () {
-
+        System.out.println("Press 0 to Return To Main Menu");
         System.out.println("\nRented Cars\n");
 
 
@@ -112,23 +113,26 @@ public class RentalServiceTwo {
         //display available cars
 //        System.out.println(availableCars);
         for (int i = 0; i < availableCars.size(); i++) {
-            System.out.println(i+1 +") " + availableCars.get(i).getName());
+            System.out.println(i + 1 + ") " + availableCars.get(i).getName());
         }
 
         // read user input
-        int userSelection = UI.readInt("Enter a number to select the car you'd like to return", 1, availableCars.size());
+        int userSelection = UI.readInt("Enter a number to select the car you'd like to return", 0, availableCars.size());
+        if (userSelection == 0) {
+            mainMenu();
+        } else {
+            System.out.println("Thank you, you have returned the " + availableCars.get(userSelection - 1).getName());
 
-        System.out.println("Thank you, you have returned the " + availableCars.get(userSelection-1).getName());
+            availableCars.get(userSelection - 1).setRented(false);
 
-        availableCars.get(userSelection-1).setRented(false);
+            System.out.println("Bringing you back to the main menu… ");
 
-        System.out.println("Bringing you back to the main menu… ");
+            mainMenu();
 
-        mainMenu();
-
-        //adding a counter that checks everytime it prints out
+            //adding a counter that checks everytime it prints out
 
 
+        }
     }
 
 
